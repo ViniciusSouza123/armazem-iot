@@ -84,7 +84,7 @@ void reconnect() {
   while (!client.connected()) {
     Serial.print("Tentando conexão MQTT...");
     // Tenta se conectar com um ID de cliente único
-    String clientId = "ESP32ClientGuga";
+    String clientId = "ESP32Clientvini";
     
     // Tenta conectar
     if (client.connect(clientId.c_str())) {
