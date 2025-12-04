@@ -63,6 +63,26 @@ digitalWrite(buzzer, HIGH)   buzzer ativo
 
 
 
+int state = digitalRead(button1);
+
+if (state == LOW) {
+  Serial.println("button1: ON");   // pressionado
+} else {
+  Serial.println("button1: OFF");  // solto
+}
+
+delay(200);
+
+
+
+INPUT_PULLUP = o pino fica “puxado para cima” automaticamente.
+
+Assim:
+
+Botão solto → HIGH (1)
+
+Botão apertado → LOW (0) porque liga o pino ao GND.
+
   
 
   Serial.print("Hello world!");
