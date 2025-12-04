@@ -28,10 +28,42 @@ void setup() {
   Serial.begin(115200); // Obrigatorio
   pinMode(ledPin, OUTPUT); // INPUT para leitores, OUTPUT para saidas
   
-  digitalRead(Componente); // Leitura de componentes digitais
+  digitalRead(Componente); // Leitura de componentes digitais (
   digitalWrite(ledPin, LOW); // Escrita para componentes digitais
   analogRead(Componente); // Leitura de componentes analogicos
   analogWrite(Componente, Valor); // Escrita para componentes analogicos
+
+
+digitalWrite(ledgreen, LOW); // quando o LED esta conectado ao VCC, quando bota que ele ta low ele liga, e quando bota HIGH desliga, 
+  e quando esta conectado ao ground é diferente (conecte no ground)
+
+
+digital write serve para ligar e desligar pinos (LED, BUZZER, ) // DIGITAL READ SERVE PARA LER O ESTADO DE UM PINO(ON ou OFF) // 
+ANALOG READ serve para ler o estado de um fotoressistor, DHT, potenciometro,etc
+
+
+digitalWrite(buzzer, HIGH)   buzzer ativo
+
+  tone(buzzer, 1000);   // toca 1000 Hz buzzer passivo
+  delay(500);
+  
+
+| Componente        | digitalRead | digitalWrite | analogRead | analogWrite         |
+| ----------------- | ----------- | ------------ | ---------- | ------------------- |
+| **Botão**         | ✔           | —            | ❌          | ❌                   |
+| **Fotoresistor**  | ❌           | —            | ✔          | ❌                   |
+| **DHT11/22**      | ❌           | ❌            | ❌          | ❌                   |
+| **LED**           | ❌           | ✔            | ❌          | ✔ (brilho)          |
+| **Ultrassônico**  | ❌           | ✔ (TRIG)     | ❌          | ❌                   |
+| **Potenciômetro** | ❌           | —            | ✔          | ❌                   |
+| **Servo**         | ❌           | ❌            | ❌          | ❌ (comando próprio) |
+| **LED RGB**       | ❌           | ✔            | ❌          | ✔                   |
+| **Buzzer**        | ❌           | ✔            | ❌          | ✔                   |
+
+
+
+
+  
 
   Serial.print("Hello world!");
 }
