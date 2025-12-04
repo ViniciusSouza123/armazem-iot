@@ -20,7 +20,7 @@ Fora isso, utilize livremente os pinos, porem evite pinos como o 0 ou pinos com 
 PINOS RECOMENDADOS ESP32 NORMAL:
 Analogica: 30, 31, 32, 33, 34, 35
 Digital: Qualquer outra
-
+Placa ESP32 Normal: ESP32 DEVKITV1 ou DOITY alguma coisa
 */
 
 
