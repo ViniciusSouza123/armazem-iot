@@ -35,6 +35,10 @@ void setup() {
 
 void loop() {
 
+  int potValue = analogRead(potenc);
+  Serial.print("Potenciometro: ");
+  Serial.println(potValue);
+
   // ======= TRATAMENTO DA INTERRUPÇÃO =======
   if (interruptFlag) {
     interruptFlag = false;       // limpa a flag
