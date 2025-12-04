@@ -60,6 +60,17 @@ void IRAM_ATTR handleButtonISR() {
   }
 }
 
+Uma interrupção (ISR) que dispara quando o botão é pressionado
+
+Um debounce interno, evitando múltiplos disparos falsos
+
+Alterna uma variável buttonState somente quando o botão é realmente pressionado
+
+Conta quantos disparos ocorreram (bounceCount) — útil para debug
+
+
+
+
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);
