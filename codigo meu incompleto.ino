@@ -35,7 +35,7 @@ void setup() {
 
 void loop() {
 
-  int potValue = analogRead(potenc);
+  int potValue = analogRead(potenc);   lendo o potenciometro
   Serial.print("Potenciometro: ");
   Serial.println(potValue);
 
