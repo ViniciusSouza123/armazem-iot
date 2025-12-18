@@ -109,3 +109,16 @@ void loop() {
   delay(2000);
 }
 
+
+ int potValue = analogRead(potenc);   lendo o potenciometro
+  Serial.print("Potenciometro: ");
+  Serial.println(potValue);
+
+
+
+int fotoValue = analogRead(fotoPin);   // lendo o fotoresistor
+Serial.print("Fotoresistor (ADC): ");
+Serial.println(fotoValue);
+
+
+
