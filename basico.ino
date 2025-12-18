@@ -129,3 +129,24 @@ Serial.println(ledState);
 
 
 
+
+
+
+void loop() {
+  float umidade = dht.readHumidity();
+  float temperatura = dht.readTemperature();
+
+  Serial.print("Temp: ");
+  Serial.print(temperatura);
+  Serial.print(" °C | Umidade: ");
+  Serial.print(umidade);
+  Serial.println(" %");
+
+  delay(2000);
+}
+
+
+
+
+
+
