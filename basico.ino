@@ -92,3 +92,20 @@ void loop() {
   delay(2000);
   Serial.println("Hello world!");
 }
+
+
+
+
+void loop() {
+  float temperatura = dht.readTemperature();
+  float umidade = dht.readHumidity();
+
+  Serial.print("Temperatura: ");
+  Serial.println(temperatura);
+
+  Serial.print("Umidade: ");
+  Serial.println(umidade);
+
+  delay(2000);
+}
+
