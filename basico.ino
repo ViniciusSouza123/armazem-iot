@@ -146,6 +146,73 @@ void loop() {
 }
 
 
+#include <DHT.h>
+
+// ---------- PINOS ----------
+#define BOTAO_PIN 10
+
+#define POT_PIN   1
+#define FOTO_PIN  2
+
+#define DHT_PIN   4
+#define DHT_TYPE  DHT22   // ou DHT11
+
+// ---------- OBJETO DHT ----------
+DHT dht(DHT_PIN, DHT_TYPE);
+
+// ---------- CONTROLE ----------
+bool lendo = true;
+bool ultimoEstadoBotao = HIGH;
+
+void setup() {
+  Serial.begin(115200);
+
+  pinMode(BOTAO_PIN, INPUT_PULLUP);
+
+  dht.begin();
+}
+
+void loop() {
+
+  // -------- BOTÃO (TOGGLE) --------
+  bool estadoBotao = digitalRead(BOTAO_PIN);
+
+  if (estadoBotao == LOW && ultimoEstadoBotao == HIGH) {
+    lendo = !lendo;      // pausa / volta
+    delay(200);          // debounce simples
+  }
+
+  ultimoEstadoBotao = estadoBotao;
+
+  // -------- LEITURAS --------
+  if (lendo) {
+    int potValue  = analogRead(POT_PIN);
+    int fotoValue = analogRead(FOTO_PIN);
+
+    float temperatura = dht.readTemperature();
+    float umidade     = dht.readHumidity();
+
+    Serial.println("---- LEITURAS ----");
+
+    Serial.print("Potenciometro: ");
+    Serial.println(potValue);
+
+    Serial.print("Fotoresistor: ");
+    Serial.println(fotoValue);
+
+    Serial.print("Temperatura: ");
+    Serial.print(temperatura);
+    Serial.println(" °C");
+
+    Serial.print("Umidade: ");
+    Serial.print(umidade);
+    Serial.println(" %");
+
+    Serial.println();
+  }
+
+  delay(1000);
+}
 
 
 
