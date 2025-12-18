@@ -122,3 +122,10 @@ Serial.println(fotoValue);
 
 
 
+int ledState = digitalRead(ledPin);
+
+Serial.print("LED: ");
+Serial.println(ledState);
+
+
+
