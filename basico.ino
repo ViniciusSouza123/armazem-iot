@@ -211,6 +211,10 @@ void loop() {
     Serial.println();
   }
 
+
+
+
+
   delay(#include <DHT.h>
 
 // ---------- PINOS ----------
